@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PasswordGuard AI</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h1>PasswordGuard AI</h1>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#analyzer">Password Analyzer</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Welcome Section -->
+    <main>
+
+        <section id="home" class="welcome-section">
+            <h2>Protect Your Passwords with AI</h2>
+
+            <p>
+                Analyze password strength, identify potential
+                vulnerabilities, and receive security recommendations
+                using machine learning.
+            </p>
+        </section>
+
+
+        <!-- Password Analyzer -->
+        <section id="analyzer" class="analyzer-section">
+
+            <h2>Password Vulnerability Analyzer</h2>
+
+            <p>
+                Enter a sample password below to analyze its strength
+                and identify potential security weaknesses.
+            </p>
+
+            <form id="analyzeForm">
+
+                <label for="password">Enter Password:</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter a sample password"
+                    required
+                >
+
+                <button type="button" id="togglePassword">
+                    Show Password
+                </button>
+
+                <button type="submit">
+                    Analyze Password
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Analysis Results -->
+        <section id="results" class="results-section" hidden>
+
+            <h2>Analysis Results</h2>
+
+            <div class="result-card">
+                <h3>Predicted Password Strength</h3>
+                <p id="strengthResult">Waiting for analysis...</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Potential Vulnerabilities</h3>
+
+                <ul id="vulnerabilityList">
+                    <li>Results will appear here.</li>
+                </ul>
+            </div>
+
+            <div class="result-card">
+                <h3>Security Recommendations</h3>
+
+                <ul id="recommendationList">
+                    <li>Recommendations will appear here.</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="dashboard-section">
+
+            <h2>Password Security Dashboard</h2>
+
+            <p>
+                View statistics and performance information from
+                the password dataset and machine learning models.
+            </p>
+
+            <div class="dashboard-cards">
+
+                <div class="dashboard-card">
+                    <h3>Dataset Size</h3>
+                    <p id="datasetSize">Coming soon</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Random Forest Accuracy</h3>
+                    <p id="randomForestAccuracy">Coming soon</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Decision Tree Accuracy</h3>
+                    <p id="decisionTreeAccuracy">Coming soon</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>PasswordGuard AI | AI-Based Password Vulnerability Analysis</p>
+    </footer>
+
+
+    <!-- Connect JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
